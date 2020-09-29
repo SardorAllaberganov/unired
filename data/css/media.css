@@ -21,6 +21,7 @@
     height: 100%;
     -webkit-transform: none;
             transform: none;
+    position: fixed;
     padding: 30px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

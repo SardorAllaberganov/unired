@@ -192,6 +192,7 @@ button {
 .city-list .active {
   background: #E20001;
   padding: 5px 10px;
+  text-align: center;
   color: #fff !important;
 }
 
@@ -219,7 +220,7 @@ button {
 
 .mobile-menu {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   background: #fff;
   top: 0;
@@ -606,6 +607,7 @@ h4.section-title::before {
     height: 100%;
     -webkit-transform: none;
             transform: none;
+    position: fixed;
     padding: 30px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

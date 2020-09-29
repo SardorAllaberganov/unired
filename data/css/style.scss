@@ -144,6 +144,7 @@ button{
     .active{
         background: #E20001;
         padding: 5px 10px;
+        text-align: center;
         color: #fff!important;
     }
 }
@@ -167,7 +168,7 @@ button{
 
 .mobile-menu{
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 9999;
     background: #fff;
     top: 0;
