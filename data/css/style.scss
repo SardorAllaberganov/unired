@@ -471,14 +471,17 @@ h4.section-title {
             justify-content: center;
             margin-right: 15px;
             border: 1px solid transparent;
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             padding-bottom: 2px;
             border-radius: 50%;
             transition: all 0.2s;
             &:hover {
                 border: 1px solid #0b2a49;
             }
+        }
+        img{
+            width: 20px;
         }
     }
 }
