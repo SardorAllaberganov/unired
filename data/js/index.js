@@ -62,7 +62,7 @@ $(document).ready(function () {
         smartSpeed: 5000,
         autoplay: true,
         autoplayTimeout: 5000,
-        slideTransition: 'linear',
+        slideTransition: "linear",
         nav: false,
         responsive: {
             0: {
@@ -77,3 +77,21 @@ $(document).ready(function () {
         },
     });
 });
+
+
+$(document).ready(function () {
+    $(".thumbnails img").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".mainImg img").hide().attr("src", $(this).attr("src")).fadeIn(300);
+    });
+
+    $(".mainImg img").click(function (event) {
+        event.stopPropagation()
+        $(".modal-img").attr("src", $(this).attr("src"));
+        $(".image-modal").fadeIn(300);
+    });
+
+    $(window).on("click", function () {
+        $(".image-modal").fadeOut(300);
+    });
+});    

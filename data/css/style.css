@@ -37,6 +37,10 @@ button {
   margin: 0;
 }
 
+.navbar .active {
+  color: #e20001;
+}
+
 .application-btn {
   position: fixed;
   bottom: 50px;
@@ -61,6 +65,7 @@ button {
 .application-btn img {
   max-width: 50px;
   width: 100%;
+  padding: 5px;
 }
 
 .application-btn::before, .application-btn::after {
@@ -343,6 +348,10 @@ button {
       flex-wrap: nowrap;
 }
 
+.shares-list::-webkit-scrollbar {
+  display: none;
+}
+
 .shares-list .shares-items {
   overflow: hidden;
   position: relative;
@@ -500,6 +509,10 @@ h4.section-title::before {
   overflow-x: auto;
 }
 
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 .inner-services {
   width: 100%;
 }
@@ -654,6 +667,240 @@ h4.section-title::before {
   width: 20px;
 }
 
+.shares h4 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #e20001;
+  margin: 30px 0;
+}
+
+.shares .inner-share {
+  width: 100%;
+}
+
+.shares .inner-share div {
+  overflow: hidden;
+}
+
+.shares .inner-share img {
+  width: 100%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.shares .inner-share:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.shares .inner-share:hover h6 {
+  color: #e20001;
+}
+
+.shares .inner-share h6 {
+  color: #0b2a49;
+  padding: 10px;
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.shares .inner-shares {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.shares .inner-shares a {
+  width: 25%;
+  padding: 0 15px;
+  display: block;
+}
+
+.shares .inner-shares a div {
+  overflow: hidden;
+}
+
+.shares .inner-shares a img {
+  width: 100%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.shares .inner-shares a:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.shares .inner-shares a h6 {
+  color: #0b2a49;
+  padding: 15px;
+  text-align: center;
+}
+
+.shares .inner-shares a:hover h6 {
+  color: #e20001;
+}
+
+.pagination {
+  margin: 30px 0;
+}
+
+.page-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-link {
+  text-align: center;
+  color: #e20001;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+}
+
+.page-link svg {
+  width: 20px;
+}
+
+.page-link:hover {
+  color: #c90001;
+}
+
+.page-item.active .page-link {
+  background: #e20001;
+  color: #fff;
+  border-color: #e20001;
+}
+
+.page-item:last-child .page-link {
+  border-radius: 0 20px 20px 0;
+  width: 45px;
+}
+
+.page-item:first-child .page-link {
+  border-radius: 20px 0 0 20px;
+  width: 45px;
+}
+
+.thumbnails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: auto;
+}
+
+.thumbnails::-webkit-scrollbar {
+  margin-top: 10px;
+  height: 5px;
+}
+
+.thumbnails::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 50px;
+}
+
+.thumbnails::-webkit-scrollbar-thumb {
+  background: #e20001;
+  border-radius: 50px;
+}
+
+.thumbnails img {
+  height: 100px;
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+  opacity: 0.7;
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+  margin: 10px 10px 0 0;
+}
+
+.mainImg img {
+  height: 50vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.thumbnails .active {
+  opacity: 1;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+}
+
+.image-modal {
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  display: none;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.image-modal .modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
+.image-modal img {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 90vh;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+  z-index: 99;
+}
+
+.social-links a {
+  margin: 0 5px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.social-links img {
+  width: 20px;
+}
+
 @media only screen and (max-width: 992px) {
   .menu {
     display: none;
@@ -731,6 +978,9 @@ h4.section-title::before {
     max-width: 80%;
     margin-bottom: 10px;
   }
+  .shares .inner-shares a {
+    width: 33.333333%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -796,6 +1046,12 @@ h4.section-title::before {
   .application-btn {
     width: 40px;
     height: 40px;
+  }
+  .shares .inner-shares a {
+    width: 50%;
+  }
+  .shares .inner-shares a h6 {
+    font-size: 0.9em;
   }
 }
 
