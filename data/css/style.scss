@@ -627,10 +627,18 @@ h4.section-title {
 }
 
 .mainImg {
+    position: relative;
+    transition: all .3s;
     img {
         height: 50vh;
         width: 100%;
         object-fit: cover;
+        transition: all .2s;
+        z-index: 99;
+    }
+    &:hover img{
+        filter: brightness(70%);
+        cursor: pointer;
     }
 }
 
@@ -660,7 +668,7 @@ h4.section-title {
         top: 50%;
         transform: translateY(-50%);
         height: 90vh;
-        width: auto;
+        width: 90%;
         object-fit: contain;
         position: relative;
         z-index: 99;
@@ -668,19 +676,21 @@ h4.section-title {
 }
 
 .social-links{
+    display: flex;
     a{
         margin: 0 5px;
         border: 1px solid transparent;
         border-radius: 50%;
-        // display: flex;
-        // align-items: center;
-        // width: 30px;
-        // height: 30px;
-        // justify-content: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
         padding: 5px;
-        // &:hover{
-        //     border: 1px solid #0b2a49;
-        // }
+        &:hover{
+            border: 1px solid #0b2a49;
+        }
     }
     img{
         width: 20px;

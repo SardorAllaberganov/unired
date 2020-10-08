@@ -85,7 +85,7 @@ $(document).ready(function () {
         $(".mainImg img").hide().attr("src", $(this).attr("src")).fadeIn(300);
     });
 
-    $(".mainImg img").click(function (event) {
+    $(".mainImg img").click(function (event){
         event.stopPropagation()
         $(".modal-img").attr("src", $(this).attr("src"));
         $(".image-modal").fadeIn(300);
