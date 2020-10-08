@@ -122,6 +122,7 @@
     }
     h4.section-title{
         font-size: 1.25em!important;
+        width: 100%;
     }
     .become-partners{
         h4{
@@ -143,6 +144,15 @@
     }
     .shares .inner-shares a h6{
         font-size: 0.9em;
+    }
+    .table-tariff{
+        width: max-content;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    h4.section-title{
+        font-size: .9em!important;
     }
 }
 

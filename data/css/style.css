@@ -941,6 +941,36 @@ h4.section-title::before {
   width: 20px;
 }
 
+.info-page h4 {
+  font-weight: 700;
+  color: #e20001;
+  margin-bottom: 20px;
+}
+
+.info-page p {
+  color: #0b2a49;
+}
+
+.table-tariff {
+  width: 100%;
+}
+
+.table-tariff th {
+  padding: 10px 20px;
+  background-color: #e20001;
+  color: #fff;
+  font-weight: 500;
+}
+
+.table-tariff td {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.table-tariff tr:hover {
+  background-color: #f0f0f0;
+}
+
 @media only screen and (max-width: 992px) {
   .menu {
     display: none;
@@ -1076,6 +1106,7 @@ h4.section-title::before {
   }
   h4.section-title {
     font-size: 1.25em !important;
+    width: 100%;
   }
   .become-partners h4 {
     font-size: 1em;
@@ -1092,6 +1123,17 @@ h4.section-title::before {
   }
   .shares .inner-shares a h6 {
     font-size: 0.9em;
+  }
+  .table-tariff {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  h4.section-title {
+    font-size: 0.9em !important;
   }
 }
 

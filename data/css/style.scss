@@ -697,4 +697,32 @@ h4.section-title {
     }
 }
 
+.info-page{
+    h4{
+        font-weight: 700;
+        color: #e20001;
+        margin-bottom: 20px;
+    }
+    p{
+        color: #0b2a49;
+    }
+}
+
+.table-tariff{
+    width: 100%;
+    th{
+        padding: 10px 20px;
+        background-color: #e20001;
+        color: #fff;
+        font-weight: 500;
+    }
+    td{
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    tr:hover{
+        background-color: #f0f0f0;
+    }
+}
+
 @import "media.scss";
