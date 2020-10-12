@@ -728,7 +728,6 @@ h4.section-title {
 
 .my-carousel {
     width: 100% !important;
-    height: 70vh !important;
     .carousel-inner,
     .carousel-item {
         height: 100%;
@@ -762,13 +761,13 @@ h4.section-title {
             font-weight: 600;
             display: block;
             position: relative;
-            transition: all .3s;
             &:after {
                 content: " "; /* fa-chevron-down */
                 position: absolute;
                 background: url(../image/icons/chevron-down.svg);
-                transition: all .3s;
                 right: 0;
+                top: 50%;
+                transform: translateY(-50%);
                 width: 26px;
                 height: 26px;
                 background-position: center;
@@ -778,8 +777,9 @@ h4.section-title {
                 content: " "; 
                 position: absolute;
                 background: url(../image/icons/chevron-up.svg);
-                transition: all .3s;
                 right: 0;
+                top: 50%;
+                transform: translateY(-50%);
                 width: 26px;
                 height: 26px;
                 background-position: center;

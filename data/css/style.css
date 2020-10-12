@@ -974,7 +974,6 @@ h4.section-title::before {
 
 .my-carousel {
   width: 100% !important;
-  height: 70vh !important;
 }
 
 .my-carousel .carousel-inner,
@@ -1017,8 +1016,6 @@ h4.section-title::before {
   font-weight: 600;
   display: block;
   position: relative;
-  -webkit-transition: all .3s;
-  transition: all .3s;
 }
 
 #accordion .card-link:after {
@@ -1026,9 +1023,10 @@ h4.section-title::before {
   /* fa-chevron-down */
   position: absolute;
   background: url(../image/icons/chevron-down.svg);
-  -webkit-transition: all .3s;
-  transition: all .3s;
   right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 26px;
   height: 26px;
   background-position: center;
@@ -1039,9 +1037,10 @@ h4.section-title::before {
   content: " ";
   position: absolute;
   background: url(../image/icons/chevron-up.svg);
-  -webkit-transition: all .3s;
-  transition: all .3s;
   right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 26px;
   height: 26px;
   background-position: center;
@@ -1063,6 +1062,12 @@ h4.section-title::before {
 #accordion > a[aria-expanded="true"]:after {
   content: url(../image/icons/chevron-up.svg);
   /* fa-chevron-up */
+}
+
+@media only screen and (min-width: 1025px) {
+  .my-carousel {
+    height: 70vh;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -1144,6 +1149,20 @@ h4.section-title::before {
   }
   .shares .inner-shares a {
     width: 33.333333%;
+  }
+  .my-carousel {
+    height: 100%;
+  }
+  .my-carousel .carousel-caption p {
+    width: 100%;
+    font-size: .8em;
+  }
+  .my-carousel .carousel-caption h5 {
+    font-size: 1em;
+  }
+  #accordion .card-link {
+    font-size: .9em;
+    padding-right: 25px;
   }
 }
 
@@ -1228,6 +1247,12 @@ h4.section-title::before {
 @media only screen and (max-width: 576px) {
   h4.section-title {
     font-size: 0.9em !important;
+  }
+  .my-carousel {
+    height: 40vh;
+  }
+  .my-carousel img {
+    height: 100%;
   }
 }
 

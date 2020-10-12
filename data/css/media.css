@@ -1,3 +1,9 @@
+@media only screen and (min-width: 1025px) {
+  .my-carousel {
+    height: 70vh;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .menu {
     display: none;
@@ -77,6 +83,20 @@
   }
   .shares .inner-shares a {
     width: 33.333333%;
+  }
+  .my-carousel {
+    height: 100%;
+  }
+  .my-carousel .carousel-caption p {
+    width: 100%;
+    font-size: .8em;
+  }
+  .my-carousel .carousel-caption h5 {
+    font-size: 1em;
+  }
+  #accordion .card-link {
+    font-size: .9em;
+    padding-right: 25px;
   }
 }
 
@@ -161,6 +181,12 @@
 @media only screen and (max-width: 576px) {
   h4.section-title {
     font-size: 0.9em !important;
+  }
+  .my-carousel {
+    height: 40vh;
+  }
+  .my-carousel img {
+    height: 100%;
   }
 }
 
