@@ -847,8 +847,8 @@ h4.section-title::before {
 
 .mainImg {
   position: relative;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .mainImg img {
@@ -856,8 +856,8 @@ h4.section-title::before {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   z-index: 99;
 }
 
@@ -977,8 +977,92 @@ h4.section-title::before {
   height: 70vh !important;
 }
 
-.my-carousel .carousel-inner, .my-carousel .carousel-item {
+.my-carousel .carousel-inner,
+.my-carousel .carousel-item {
   height: 100%;
+}
+
+.my-carousel img {
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.my-carousel .carousel-caption {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: left;
+  bottom: auto;
+}
+
+.my-carousel .carousel-caption p {
+  width: 50%;
+}
+
+#accordion .card {
+  border-radius: 0;
+  margin: 3px 0;
+}
+
+#accordion .card-header {
+  border-radius: 0;
+  background-color: #f9f9f9;
+  border-bottom: 0;
+}
+
+#accordion .card-link {
+  color: #0b2a49;
+  font-weight: 600;
+  display: block;
+  position: relative;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#accordion .card-link:after {
+  content: " ";
+  /* fa-chevron-down */
+  position: absolute;
+  background: url(../image/icons/chevron-down.svg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  background-position: center;
+  background-size: contain;
+}
+
+#accordion .card-link[aria-expanded="true"]:after {
+  content: " ";
+  position: absolute;
+  background: url(../image/icons/chevron-up.svg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  background-position: center;
+  background-size: contain;
+  /* fa-chevron-up */
+}
+
+#accordion .card .card-body {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#accordion > a:after {
+  content: url(../image/icons/chevron-down.svg);
+  /* fa-chevron-down */
+  position: absolute;
+  right: 0;
+}
+
+#accordion > a[aria-expanded="true"]:after {
+  content: url(../image/icons/chevron-up.svg);
+  /* fa-chevron-up */
 }
 
 @media only screen and (max-width: 992px) {
