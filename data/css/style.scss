@@ -321,6 +321,7 @@ button {
         flex-wrap: wrap;
         .shares-items {
             height: 50%;
+            width: 100%;
         }
     }
 }
@@ -723,6 +724,15 @@ h4.section-title {
     tr:hover{
         background-color: #f0f0f0;
     }
+}
+
+.my-carousel{
+    width: 100%!important;
+    height: 70vh!important;
+    .carousel-inner, .carousel-item{
+        height: 100%;
+    }
+    
 }
 
 @import "media.scss";

@@ -436,6 +436,7 @@ button {
 
 .shares-list .shares-right .shares-items {
   height: 50%;
+  width: 100%;
 }
 
 .owl-carousel {
@@ -969,6 +970,15 @@ h4.section-title::before {
 
 .table-tariff tr:hover {
   background-color: #f0f0f0;
+}
+
+.my-carousel {
+  width: 100% !important;
+  height: 70vh !important;
+}
+
+.my-carousel .carousel-inner, .my-carousel .carousel-item {
+  height: 100%;
 }
 
 @media only screen and (max-width: 992px) {
