@@ -56,6 +56,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="data/js/owl.carousel.min.js"></script>
     <script src="data/js/index.js"></script>
+
+    <style>
+        #load_text_temp{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        #load_text_temp li{
+            padding: 10px;
+            margin: 10px;
+            width: calc(50% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -167,87 +186,24 @@
         </div>
     </div>
 
-    <div class="container shares">
-        <h4>Aksiyalar</h4>
-        <div class="row my-2 my-sm-0">
-            <div class="inner-shares">
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim1.png" alt="">
-                    </div>
-                    <h6>Онлайн-распродажа от REALME</h6>
-                </a>
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim2.png" alt="">
-                    </div>
-                    <h6>Акция BARAKALI XARIDLAR от ARTEL</h6>
-                </a>
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim3.png" alt="">
-                    </div>
-                    <h6>Подарок от VIVO</h6>
-                </a>
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim4.png" alt="">
-                    </div>
-                    <h6>Розыгрыш пылесоса от AVALON</h6>
-                </a>
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim1.png" alt="">
-                    </div>
-                    <h6>Онлайн-распродажа от REALME</h6>
-                </a>
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim2.png" alt="">
-                    </div>
-                    <h6>Акция BARAKALI XARIDLAR от ARTEL</h6>
-                </a>
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim3.png" alt="">
-                    </div>
-                    <h6>Подарок от VIVO</h6>
-                </a>
-                <a href="shares-item.html">
-                    <div>
-                        <img src="data/image/sharesim4.png" alt="">
-                    </div>
-                    <h6>Розыгрыш пылесоса от AVALON</h6>
-                </a>
-            </div>
-
+    <div class="container">
+        <div class="row">
             <div class="col-12">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 19L8 14L13 9M20 19L15 14L20 9" stroke="#E20001" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 19L20 14L15 9M8 19L13 14L8 9" stroke="#E20001" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+                <div class="post">
+                    <ul id="postTitle"></ul>
+                    <input type="hidden" id="row" value="0">
+                    <input type="hidden" id="all" value="5">
+                </div>
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="load"></div>
+                <ul id="load_text_temp"></ul>
+            </div>
+        </div>
+        
     </div>
 
     <!-- footer -->
