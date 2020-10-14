@@ -16,17 +16,17 @@
     <link rel="stylesheet" href="data/css/style.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179255090-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179255090-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-179255090-1');
-    </script>
+    </script> -->
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
             m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
@@ -44,7 +44,7 @@
     </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/67767403" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
+    </noscript> -->
     <!-- /Yandex.Metrika counter -->
 
 
@@ -56,63 +56,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="data/js/owl.carousel.min.js"></script>
     <script src="data/js/index.js"></script>
-
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            var pageIs = 1;
-
-            if ($('#load_text_temp').html() === '') {
-                $.ajax({
-                    url:
-                        "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
-                        1,
-                    type: "GET",
-                    // data: JSON.stringify({ page: page }),
-                    // contentType: "application/json; charset=UTF-8",
-                    dataType: "json",
-                    success: function (response) {
-                        for (var i = 0; i < response.results.length; i++) {
-                            var title = response.results[i].title;
-                            console.log("page ", pageIs);
-                            $(`<li>${title}</li>`).hide()
-                                .appendTo($('#load_text_temp'))
-                                .show().fadeIn('slow');
-                        }
-                        pageIs++;
-                        console.log("page ", pageIs);
-                    },
-                });
-            }
-            $(window).scroll(function () {
-                var position = $(window).scrollTop();
-                var bottom = $(document).height() - $(window).height();
-
-                if (position == bottom) {
-                    $.ajax({
-                        url:
-                            "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
-                            pageIs,
-                        type: "GET",
-                        contentType: "application/json; charset=UTF-8",
-                        dataType: "json",
-                        success: function (response) {
-                            for (var i = 0; i < response.results.length; i++) {
-                                var title = response.results[i].title;
-                                // console.log("page ", pageIs);
-                                $(`<li>${title}</li>`).hide().appendTo($('#load_text_temp')).fadeIn(300);
-                            }
-                            pageIs++;
-                            console.log("page ", pageIs);
-                        },
-                    });
-                    return false;
-                }
-            });
-
-        });
-
-    </script>
 
     <style>
         #load_text_temp {
@@ -245,24 +188,106 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="post">
-                    <ul id="postTitle"></ul>
-                    <input type="hidden" id="row" value="0">
-                    <input type="hidden" id="all" value="5">
+        <div class="row partners-all my-sm-4 my-1 categories-mobile">
+            <!-- <div id="categories" class=""></div> -->
+            <ul class="category-list">
+                <li><a href="" class="active"><img src="data/image/category-icons/all catagories.png" alt=""> Все партнеры</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 43.png" alt=""> Бытовая техника</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 44.png" alt=""> Одежда и обувь</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 45.png" alt=""> Косметика</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 46.png" alt=""> Интернет магазин</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 47.png" alt=""> Путишествие</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 48.png" alt=""> Товары для дома</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 49.png" alt=""> Мебель</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 50.png" alt=""> Аксессуары для авто</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 51.png" alt=""> Строительные материалы</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 52.png" alt=""> Телефоны</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 49-1.png" alt=""> Компьютеры</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 50-1.png" alt=""> Спортивный инвентарь</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 51-1.png" alt=""> Аренда авто</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 52-1.png" alt=""> Ювелирные изделия</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 53.png" alt=""> Цветы</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 54.png" alt=""> Продукты питания</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 55.png" alt=""> Музыкальные инструменты</a>
+                </li>
+                <li><a href=""><img src="data/image/category-icons/image 56.png" alt=""> Учебный центр</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 57.png" alt=""> Красота и здаровье</a></li>
+            </ul>
+            <div class="partners-main">
+                <div class="mt-2 search-partner">
+                    <img src="data/image/icons/search.svg" alt="">
+                    <input type="text" placeholder="Поиск" autocomplete="off" id="search">
+                </div>
+                <div id="searchResults"></div>
+                <h5 class="my-3">Все партнеры</h5>
+                <div id="listOfPartners">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner1.png" alt="">
+                                <p>CZ</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner2.png" alt="">
+                                <p>Fratelli casa</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner3.png" alt="">
+                                <p>O&K Eng Arzon</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner4.png" alt="">
+                                <p>Mediapark</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner5.png" alt="">
+                                <p>Budget Rent Car</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner6.png" alt="">
+                                <p>Señor & Señorita</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner7.png" alt="">
+                                <p>Mediapark</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner8.png" alt="">
+                                <p>Mediapark</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner9.png" alt="">
+                                <p>Mediapark</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="data/image/partners/partner10.png" alt="">
+                                <p>Mediapark</p>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="load"></div>
-                <ul id="load_text_temp"></ul>
-            </div>
-        </div>
-
     </div>
+
 
     <!-- footer -->
     <footer class="footer">

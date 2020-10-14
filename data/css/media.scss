@@ -93,6 +93,24 @@
         font-size: .9em;
         padding-right: 25px;
     }
+
+    .category-list li img{
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+    }
+    .partners-main{
+        width: calc(70% - 25px);
+        margin-left: 25px;
+    }
+    .category-list{
+        width: 30%;
+        li{
+            a{
+                font-size: .7em;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -167,6 +185,16 @@
     .table-tariff{
         width: max-content;
     }
+
+    #listOfPartners ul img{
+        width: 50px;
+        height: 50px;
+    }
+    #listOfPartners ul{
+        p{
+            font-size: .7em;
+        }
+    }
 }
 
 @media only screen and (max-width: 576px){
@@ -177,6 +205,74 @@
         height: 40vh;
         img{
             height: 100%;
+        }
+    }
+
+    .application-btn img{
+        padding: 0;
+    }
+
+    .category-list li img{
+        margin: 5px auto;
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+    .partners-main{
+        width: 100%;
+        margin: 20px 0 0 0;
+        padding: 0 15px;
+        h5{
+            font-size: 1em;
+        }
+    }
+    .category-list{
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin: 15px 0;
+        background-color: #fff;
+        li{
+            text-align: center;
+            border: 0.5px solid #eee;
+            margin: 0;
+            width: 33.333333%;
+            padding: 10px;
+            a{
+                font-size: .6em;
+            }
+        }
+    }
+    .category-list li .active::after{
+        display: none;
+    }
+    .category-list li:first-child{
+        border: .5px solid #eee;
+    }
+    .categories-mobile{
+        .partners-main{
+            display: none;
+        }
+    }
+    .partners-list, .branch-item{
+        .category-list{
+            display: none;
+        }
+    }
+    #listOfPartners ul li{
+        width: calc(50% - 8px);
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .category-list{
+        
+        li{
+            a{
+                font-size: .5em;
+            }
         }
     }
 }

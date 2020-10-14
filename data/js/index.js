@@ -93,5 +93,57 @@ $(document).ready(function () {
     $(window).on("click", function () {
         $(".image-modal").fadeOut(300);
     });
+    
+    
+    $('#search').keyup(function() {
+        var searchField = $('#search').val();
+        console.log(searchField)
+        if(searchField !== ""){
+            var myExp = new RegExp(searchField, "i");
+            $.getJSON('https://unired.uz/mobile/get_partners', function(data) {
+                var output = '<ul class="searchresults">';
+                $.each(data.data, function(key, val) {
+                    
+                    if ((val.name.search(myExp) != -1)) {
+                        output += `<li><a href="branch/${val.partner_id}">`;
+                        if(val.logo.startsWith('https://unired.uz')){
+                            output += `<img src="${val.logo}" alt="Partner image"/>` + val.name;
+                        }
+                        else{
+                            output += `<img src="https://unired.uz/${val.logo}" alt="Partner image"/>` + val.name;
+                        }
+                        output += '</a></li>';
+                    }
+                });
+                output += '</ul>';
+                $('#searchResults').html(output);
+                $("#listOfPartners").hide(100);
+            }); //get JSON
+        }
+        else{
+            $('#searchResults').html(' ');
+            $("#listOfPartners").show(100);
+        }
+    });
+
+    // $.getJSON('https://unired.uz/mobile/get_partners', function(data) {
+    //     var output = '<ul>';
+    //     $.each(data.data, function(key, val) {
+
+    //         output += `<li><a href="branch/${val.partner_id}">`;
+    //         if(val.logo.startsWith('https://unired.uz')){
+    //             output += `<img src="${val.logo}" alt="Partner image"/>` + `<p>${val.name}</p>`;
+    //         }
+    //         else{
+    //             output += `<img src="https://unired.uz/${val.logo}" alt="Partner image"/>` + `<p>${val.name}</p>`;
+    //         }
+    //         output += '</a></li>';
+    //     });
+    //     output += '</ul>';
+    //     $('#listOfPartners').html(output);
+    // });
+
+
 });
+
 

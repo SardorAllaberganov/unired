@@ -16,17 +16,17 @@
     <link rel="stylesheet" href="data/css/style.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179255090-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179255090-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-179255090-1');
-    </script>
+    </script> -->
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
             m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
@@ -44,7 +44,7 @@
     </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/67767403" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
+    </noscript> -->
     <!-- /Yandex.Metrika counter -->
 
 
@@ -57,62 +57,8 @@
     <script src="data/js/owl.carousel.min.js"></script>
     <script src="data/js/index.js"></script>
 
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            var pageIs = 1;
-
-            if ($('#load_text_temp').html() === '') {
-                $.ajax({
-                    url:
-                        "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
-                        1,
-                    type: "GET",
-                    // data: JSON.stringify({ page: page }),
-                    // contentType: "application/json; charset=UTF-8",
-                    dataType: "json",
-                    success: function (response) {
-                        for (var i = 0; i < response.results.length; i++) {
-                            var title = response.results[i].title;
-                            console.log("page ", pageIs);
-                            $(`<li>${title}</li>`).hide()
-                                .appendTo($('#load_text_temp'))
-                                .show().fadeIn('slow');
-                        }
-                        pageIs++;
-                        console.log("page ", pageIs);
-                    },
-                });
-            }
-            $(window).scroll(function () {
-                var position = $(window).scrollTop();
-                var bottom = $(document).height() - $(window).height();
-
-                if (position == bottom) {
-                    $.ajax({
-                        url:
-                            "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
-                            pageIs,
-                        type: "GET",
-                        contentType: "application/json; charset=UTF-8",
-                        dataType: "json",
-                        success: function (response) {
-                            for (var i = 0; i < response.results.length; i++) {
-                                var title = response.results[i].title;
-                                // console.log("page ", pageIs);
-                                $(`<li>${title}</li>`).hide().appendTo($('#load_text_temp')).fadeIn(300);
-                            }
-                            pageIs++;
-                            console.log("page ", pageIs);
-                        },
-                    });
-                    return false;
-                }
-            });
-
-        });
-
-    </script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
     <style>
         #load_text_temp {
@@ -245,24 +191,173 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="post">
-                    <ul id="postTitle"></ul>
-                    <input type="hidden" id="row" value="0">
-                    <input type="hidden" id="all" value="5">
+        <div class="row partners-all my-sm-4 my-1 branch-item">
+            <!-- <div id="categories" class=""></div> -->
+            <ul class="category-list">
+                <li><a href="" class="active"><img src="data/image/category-icons/all catagories.png" alt=""> Все партнеры</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 43.png" alt=""> Бытовая техника</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 44.png" alt=""> Одежда и обувь</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 45.png" alt=""> Косметика</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 46.png" alt=""> Интернет магазин</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 47.png" alt=""> Путишествие</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 48.png" alt=""> Товары для дома</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 49.png" alt=""> Мебель</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 50.png" alt=""> Аксессуары для авто</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 51.png" alt=""> Строительные материалы</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 52.png" alt=""> Телефоны</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 49-1.png" alt=""> Компьютеры</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 50-1.png" alt=""> Спортивный инвентарь</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 51-1.png" alt=""> Аренда авто</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 52-1.png" alt=""> Ювелирные изделия</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 53.png" alt=""> Цветы</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 54.png" alt=""> Продукты питания</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 55.png" alt=""> Музыкальные инструменты</a>
+                </li>
+                <li><a href=""><img src="data/image/category-icons/image 56.png" alt=""> Учебный центр</a></li>
+                <li><a href=""><img src="data/image/category-icons/image 57.png" alt=""> Красота и здаровье</a></li>
+            </ul>
+            <div class="partners-main">
+                <div class="mt-2 search-partner">
+                    <img src="data/image/icons/search.svg" alt="">
+                    <input type="text" placeholder="Поиск" autocomplete="off" id="search">
                 </div>
+                <div id="searchResults"></div>
+
+                <h5 class="my-4"> <img src="data/image/partners/partner1.png" alt=""> MEDIAPARK Bozori Караташ</h5>
+                <!-- address of branch -->
+                <h6 class="my-4"> <b> Address: </b> Город Ташкент, Шайхонтохурский район, Караташ 11А.</h6>
+                <!-- map -->
+                <div id='map'></div>
+                
+                <h6 class="my-4"><a href="">Посмотреть другие магазины MEDIAPARK</a></h6>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="load"></div>
-                <ul id="load_text_temp"></ul>
-            </div>
-        </div>
-
     </div>
+
+
+    <script>
+
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
+    
+        var map = new mapboxgl.Map({
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [ 69.236881, 41.314229 ],
+            zoom: 15.5,
+            pitch: 45,
+            bearing: -39,
+            container: 'map',
+            antialias: true
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+    
+        // The 'building' layer in the mapbox-streets vector source contains building-height
+        // data from OpenStreetMap.
+    
+        map.on('load', function () {
+            // Add an image to use as a custom marker
+            map.loadImage(
+                'data/image/map-pin.png',
+                function (error, image) {
+                    if (error) throw error;
+                    map.addImage('custom-marker', image);
+                    
+                    // Add a GeoJSON source with 2 points
+                    map.addSource('points', {
+                        'type': 'geojson',
+                        'data': {
+                            'type': 'FeatureCollection',
+                            'features': [
+                                {
+                                    // feature for Mapbox DC
+                                    'type': 'Feature',
+                                    'geometry': {
+                                        'type': 'Point',
+                                        'coordinates': [ 69.236881, 41.314229 ]
+                                    },
+                                    'properties': {
+                                        'title': 'MEDIAPARK Караташ'
+                                    }
+                                }
+                            ]
+                        }
+                    });
+    
+                    // Add a symbol layer
+                    map.addLayer({
+                        'id': 'points',
+                        'type': 'symbol',
+                        'source': 'points',
+                        'layout': {
+                            'icon-image': 'custom-marker',
+                            // get the title name from the source's "title" property
+                            'text-field': ['get', 'title'],
+                            'text-font': [
+                                'Open Sans Semibold',
+                                'Arial Unicode MS Bold'
+                            ],
+                            'text-offset': [0, 1.25],
+                            'text-anchor': 'top'
+                        }
+                    });
+                }
+            );
+        });
+    
+        map.on('load', function () {
+            // Insert the layer beneath any symbol layer.
+            var layers = map.getStyle().layers;
+    
+            var labelLayerId;
+            for (var i = 0; i < layers.length; i++) {
+                if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+                    labelLayerId = layers[i].id;
+                    break;
+                }
+            }
+    
+            map.addLayer(
+                {
+                    'id': '3d-buildings',
+                    'source': 'composite',
+                    'source-layer': 'building',
+                    'filter': ['==', 'extrude', 'true'],
+                    'type': 'fill-extrusion',
+                    'minzoom': 15,
+                    'paint': {
+                        'fill-extrusion-color': '#aaa',
+    
+                        // use an 'interpolate' expression to add a smooth transition effect to the
+                        // buildings as the user zooms in
+                        'fill-extrusion-height': [
+                            'interpolate',
+                            ['linear'],
+                            ['zoom'],
+                            15,
+                            0,
+                            15.05,
+                            ['get', 'height']
+                        ],
+                        'fill-extrusion-base': [
+                            'interpolate',
+                            ['linear'],
+                            ['zoom'],
+                            15,
+                            0,
+                            15.05,
+                            ['get', 'min_height']
+                        ],
+                        'fill-extrusion-opacity': 0.6
+                    }
+                },
+                labelLayerId
+            );
+            map.scrollZoom.disable();
+        });
+    
+    </script>
+
 
     <!-- footer -->
     <footer class="footer">
