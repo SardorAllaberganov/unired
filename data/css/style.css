@@ -319,6 +319,7 @@ button {
 
 .mobile-menu ul li {
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .mobile-menu ul li img {
@@ -1367,6 +1368,9 @@ h4.section-title::before {
 }
 
 @media only screen and (max-width: 768px) {
+  .application-btn img {
+    padding: 0;
+  }
   .owl-carousel .item h4.carousel-title {
     font-size: 1.2em;
   }

@@ -116,6 +116,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .application-btn img {
+    padding: 0;
+  }
   .owl-carousel .item h4.carousel-title {
     font-size: 1.2em;
   }
