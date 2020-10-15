@@ -57,6 +57,10 @@
     <script src="data/js/owl.carousel.min.js"></script>
     <script src="data/js/index.js"></script>
 
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
     <style>
         #load_text_temp {
             display: flex;
@@ -191,7 +195,8 @@
         <div class="row partners-all my-sm-4 my-1 partners-list">
             <!-- <div id="categories" class=""></div> -->
             <ul class="category-list">
-                <li><a href="" class="active"><img src="data/image/category-icons/all catagories.png" alt=""> Все партнеры</a></li>
+                <li><a href="" class="active"><img src="data/image/category-icons/all catagories.png" alt=""> Все
+                        партнеры</a></li>
                 <li><a href=""><img src="data/image/category-icons/image 43.png" alt=""> Бытовая техника</a></li>
                 <li><a href=""><img src="data/image/category-icons/image 44.png" alt=""> Одежда и обувь</a></li>
                 <li><a href=""><img src="data/image/category-icons/image 45.png" alt=""> Косметика</a></li>
@@ -219,7 +224,12 @@
                     <input type="text" placeholder="Поиск" autocomplete="off" id="search">
                 </div>
                 <div id="searchResults"></div>
-                <h5 class="my-3">Mediapark</h5>
+                <div class="d-flex align-items-center justify-content-between mt-3">
+                    <h5 class="my-3">Mediapark</h5>
+                    <a type="button" class="map-call-btn" href="#map">На карте</a>
+                </div>
+                
+
                 <div id="listOfPartners">
                     <ul>
                         <li>
@@ -288,6 +298,8 @@
         </div>
     </div>
 
+    <div id='map'></div>
+
 
     <!-- footer -->
     <footer class="footer">
@@ -328,6 +340,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="data/js/map.js"></script>
 
 </body>
 

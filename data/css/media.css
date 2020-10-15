@@ -113,6 +113,9 @@
   .category-list li a {
     font-size: .7em;
   }
+  #listOfPartners ul li {
+    width: calc(50% - 8px);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -264,9 +267,6 @@
   }
   .partners-list .category-list, .branch-item .category-list {
     display: none;
-  }
-  #listOfPartners ul li {
-    width: calc(50% - 8px);
   }
 }
 

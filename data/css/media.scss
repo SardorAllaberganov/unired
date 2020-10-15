@@ -111,6 +111,9 @@
             }
         }
     }
+    #listOfPartners ul li{
+        width: calc(50% - 8px);
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -264,9 +267,7 @@
             display: none;
         }
     }
-    #listOfPartners ul li{
-        width: calc(50% - 8px);
-    }
+    
 }
 
 @media only screen and (max-width: 350px){
