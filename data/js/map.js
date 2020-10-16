@@ -14,12 +14,13 @@ if (navigator.geolocation) {
 var x;
 function showPosition(position) {
     x = [position.coords.longitude, position.coords.latitude];
+    console.log(x)
 
     mapboxgl.accessToken = "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
     // $.when(getCurrentCity()).done(function (response) {
     var curLocation = x;
     var map = new mapboxgl.Map({
-        style: "mapbox://styles/mapbox/light-v10",
+        style: "mapbox://styles/mapbox/streets-v11",
         center: curLocation,
         zoom: 12,
         pitch: 45,
@@ -102,61 +103,60 @@ function showPosition(position) {
                     },
                 });
 
-                map.on("load", function () {
-                    // Insert the layer beneath any symbol layer.
-                    var layers = map.getStyle().layers;
-
-                    var labelLayerId;
-                    for (var i = 0; i < layers.length; i++) {
-                        if (
-                            layers[i].type === "symbol" &&
-                            layers[i].layout["text-field"]
-                        ) {
-                            labelLayerId = layers[i].id;
-                            break;
-                        }
-                    }
-
-                    map.addLayer(
-                        {
-                            id: "3d-buildings",
-                            source: "composite",
-                            "source-layer": "building",
-                            filter: ["==", "extrude", "true"],
-                            type: "fill-extrusion",
-                            minzoom: 15,
-                            paint: {
-                                "fill-extrusion-color": "#aaa",
-
-                                // use an 'interpolate' expression to add a smooth transition effect to the
-                                // buildings as the user zooms in
-                                "fill-extrusion-height": [
-                                    "interpolate",
-                                    ["linear"],
-                                    ["zoom"],
-                                    15,
-                                    0,
-                                    15.05,
-                                    ["get", "height"],
-                                ],
-                                "fill-extrusion-base": [
-                                    "interpolate",
-                                    ["linear"],
-                                    ["zoom"],
-                                    15,
-                                    0,
-                                    15.05,
-                                    ["get", "min_height"],
-                                ],
-                                "fill-extrusion-opacity": 0.6,
-                            },
-                        },
-                        labelLayerId
-                    );
-                });
             });
+        map.on("load", function () {
+            // Insert the layer beneath any symbol layer.
+            var layers = map.getStyle().layers;
+
+            var labelLayerId;
+            for (var i = 0; i < layers.length; i++) {
+                if (
+                    layers[i].type === "symbol" &&
+                    layers[i].layout["text-field"]
+                ) {
+                    labelLayerId = layers[i].id;
+                    break;
+                }
+            }
+
+            map.addLayer(
+                {
+                    id: "3d-buildings",
+                    source: "composite",
+                    "source-layer": "building",
+                    filter: ["==", "extrude", "true"],
+                    type: "fill-extrusion",
+                    minzoom: 15,
+                    paint: {
+                        "fill-extrusion-color": "#aaa",
+
+                        // use an 'interpolate' expression to add a smooth transition effect to the
+                        // buildings as the user zooms in
+                        "fill-extrusion-height": [
+                            "interpolate",
+                            ["linear"],
+                            ["zoom"],
+                            15,
+                            0,
+                            15.05,
+                            ["get", "height"],
+                        ],
+                        "fill-extrusion-base": [
+                            "interpolate",
+                            ["linear"],
+                            ["zoom"],
+                            15,
+                            0,
+                            15.05,
+                            ["get", "min_height"],
+                        ],
+                        "fill-extrusion-opacity": 0.6,
+                    },
+                },
+                labelLayerId
+            );
         });
-        map.scrollZoom.disable();
+            // map.scrollZoom.disable();
+        });
     });
-    // });
 }
