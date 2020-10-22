@@ -188,10 +188,12 @@ function ValidCaptcha() {
     if (string1 !== string2) {
         $('#partnerSubmit').attr('disabled', true)
         $('#refresh').attr('disabled', false)
+        $('#txtInput').css('border-color', 'red')
         return false;
     } else {
         $('#partnerSubmit').attr('disabled', false)
         $('#refresh').attr('disabled', true)
+        $('#txtInput').css('border-color', 'green')
         return true;
     }
 }
