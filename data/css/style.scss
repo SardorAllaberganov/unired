@@ -1040,7 +1040,8 @@ h4.section-title {
         position: absolute;
         pointer-events: none;
         left: 15px;
-        top: 10px;
+        top: 50%;
+        transform: translateY(-50%);
         transition: 0.2s ease all;
         -moz-transition: 0.2s ease all;
         -webkit-transition: 0.2s ease all;
@@ -1052,6 +1053,7 @@ h4.section-title {
     input:focus + label,
     input:valid + label {
         top: -10px;
+        transform: translateY(0);
         font-size: 14px;
         color: #333;
         padding: 0 3px;
@@ -1145,6 +1147,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             color: #fff;
             background-color: #e20001;
         }
+    }
+    span{
+        margin-left: 15px;
+        color: #e20001;
     }
 }
 

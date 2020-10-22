@@ -158,6 +158,7 @@ $(document).ready(function () {
                 }
                 reader.readAsDataURL(this.files[0]);
                 $("#logo-label").text(this.files[0].name)
+                $(".logo-upload span").hide()
             }
         });
         

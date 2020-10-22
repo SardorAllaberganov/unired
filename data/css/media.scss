@@ -312,7 +312,18 @@
     .input-group input:focus + label,
     .input-group input:valid + label {
         font-size: 11px;   
-        top: -8px;     
+        top: -7px;     
+    }
+    .logo-upload{
+        text-align: center;
+    }
+    .logo-upload label{
+        width: 100%;
+        text-align: center;
+    }
+    #imgshow{
+        display: block;
+        margin: 20px auto;
     }
 }
 
