@@ -2,6 +2,9 @@
   .my-carousel {
     height: 70vh;
   }
+  .be-partner form .row {
+    margin: 0 -30px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -19,6 +22,12 @@
   }
   .navbar .row {
     margin: 0;
+  }
+  .be-partner .row {
+    margin: 0;
+  }
+  .be-partner form .row {
+    margin: 0 -15px;
   }
   .city-list {
     top: 0;
@@ -115,6 +124,12 @@
   }
   #listOfPartners ul li {
     width: calc(50% - 8px);
+  }
+  .radio-cards1 label {
+    width: calc(50% - 10px);
+  }
+  .be-partner .subtitle {
+    font-size: .9em;
   }
 }
 
@@ -268,11 +283,29 @@
   .partners-list .category-list, .branch-item .category-list {
     display: none;
   }
+  .be-partner .subtitle {
+    margin-top: 15px;
+  }
+  .input-group label {
+    font-size: .85em;
+  }
+  .input-group input:focus + label,
+  .input-group input:valid + label {
+    font-size: 13px;
+  }
 }
 
 @media only screen and (max-width: 350px) {
   .category-list li a {
     font-size: .5em;
+  }
+  .input-group label {
+    font-size: .75em;
+  }
+  .input-group input:focus + label,
+  .input-group input:valid + label {
+    font-size: 11px;
+    top: -8px;
   }
 }
 

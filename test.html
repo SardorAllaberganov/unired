@@ -57,62 +57,7 @@
     <script src="data/js/owl.carousel.min.js"></script>
     <script src="data/js/index.js"></script>
 
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            var pageIs = 1;
-
-            if ($('#load_text_temp').html() === '') {
-                $.ajax({
-                    url:
-                        "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
-                        1,
-                    type: "GET",
-                    // data: JSON.stringify({ page: page }),
-                    // contentType: "application/json; charset=UTF-8",
-                    dataType: "json",
-                    success: function (response) {
-                        for (var i = 0; i < response.results.length; i++) {
-                            var title = response.results[i].title;
-                            console.log("page ", pageIs);
-                            $(`<li>${title}</li>`).hide()
-                                .appendTo($('#load_text_temp'))
-                                .show().fadeIn('slow');
-                        }
-                        pageIs++;
-                        console.log("page ", pageIs);
-                    },
-                });
-            }
-            $(window).scroll(function () {
-                var position = $(window).scrollTop();
-                var bottom = $(document).height() - $(window).height();
-
-                if (position == bottom) {
-                    $.ajax({
-                        url:
-                            "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
-                            pageIs,
-                        type: "GET",
-                        contentType: "application/json; charset=UTF-8",
-                        dataType: "json",
-                        success: function (response) {
-                            for (var i = 0; i < response.results.length; i++) {
-                                var title = response.results[i].title;
-                                // console.log("page ", pageIs);
-                                $(`<li>${title}</li>`).hide().appendTo($('#load_text_temp')).fadeIn(300);
-                            }
-                            pageIs++;
-                            console.log("page ", pageIs);
-                        },
-                    });
-                    return false;
-                }
-            });
-
-        });
-
-    </script>
+    
 
     <style>
         #load_text_temp {
@@ -303,6 +248,64 @@
             </div>
         </div>
     </footer>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var pageIs = 1;
+
+            if ($('#load_text_temp').html() === '') {
+                $.ajax({
+                    url:
+                        "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
+                        1,
+                    type: "GET",
+                    // data: JSON.stringify({ page: page }),
+                    // contentType: "application/json; charset=UTF-8",
+                    dataType: "json",
+                    success: function (response) {
+                        for (var i = 0; i < response.results.length; i++) {
+                            var title = response.results[i].title;
+                            console.log("page ", pageIs);
+                            $(`<li>${title}</li>`).hide()
+                                .appendTo($('#load_text_temp'))
+                                .show().fadeIn('slow');
+                        }
+                        pageIs++;
+                        console.log("page ", pageIs);
+                    },
+                });
+            }
+            $(window).scroll(function () {
+                var position = $(window).scrollTop();
+                var bottom = $(document).height() - $(window).height();
+
+                if (position == bottom) {
+                    $.ajax({
+                        url:
+                            "https://api.themoviedb.org/3/movie/upcoming?api_key=a4942ba2bb35ba2f7205bedb5a8989bc&page=" +
+                            pageIs,
+                        type: "GET",
+                        contentType: "application/json; charset=UTF-8",
+                        dataType: "json",
+                        success: function (response) {
+                            for (var i = 0; i < response.results.length; i++) {
+                                var title = response.results[i].title;
+                                // console.log("page ", pageIs);
+                                $(`<li>${title}</li>`).hide().appendTo($('#load_text_temp')).fadeIn(300);
+                            }
+                            pageIs++;
+                            console.log("page ", pageIs);
+                        },
+                    });
+                    return false;
+                }
+            });
+
+        });
+
+    </script>
 
 </body>
 

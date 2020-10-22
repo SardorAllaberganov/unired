@@ -518,6 +518,18 @@ h4.section-title::before {
   background: none;
 }
 
+.more-btn:disabled {
+  background: #960001;
+  color: #fbfbfb;
+  opacity: .7;
+}
+
+.more-btn:disabled:hover {
+  background: #960001;
+  color: #fbfbfb;
+  opacity: .7;
+}
+
 .scroll-wrapper {
   overflow-x: auto;
 }
@@ -680,6 +692,11 @@ h4.section-title::before {
   width: 20px;
 }
 
+.be-partner .subtitle {
+  color: #999;
+}
+
+.be-partner h4,
 .shares h4 {
   font-size: 1.3em;
   font-weight: 700;
@@ -1102,11 +1119,11 @@ h4.section-title::before {
 .category-list li a {
   color: #0b2a49;
   font-weight: 600;
-  font-size: .8em;
+  font-size: 0.8em;
   text-transform: uppercase;
   display: block;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .category-list li a:hover {
@@ -1143,8 +1160,8 @@ h4.section-title::before {
 
 .partners-main h6 a {
   color: #0b2a49;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .partners-main h6 a:hover {
@@ -1232,12 +1249,12 @@ h4.section-title::before {
 
 #listOfPartners ul a {
   display: block;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   padding: 10px;
   color: #0b2a49;
   font-weight: 600;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 #listOfPartners ul a:hover {
@@ -1272,8 +1289,8 @@ h4.section-title::before {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .map-call-btn:hover {
@@ -1281,9 +1298,195 @@ h4.section-title::before {
   color: #fff;
 }
 
+.input-group {
+  position: relative;
+  margin: 10px 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 0;
+  border: none;
+  background-color: #eeeeee;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.input-group input::-webkit-outer-spin-button, .input-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-group label {
+  color: #999;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 15px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.input-group label span {
+  color: inherit;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -10px;
+  font-size: 14px;
+  color: #333;
+  padding: 0 3px;
+  background: #f9f9f9;
+}
+
+.input-group input:focus + label span,
+.input-group input:valid + label span {
+  color: #e20001;
+}
+
+.input-group input:focus,
+.input-group input:valid {
+  outline: none;
+  background-color: #f9f9f9;
+  border: 1px solid #333;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  outline: none;
+}
+
+.radio-cards1-input {
+  display: none;
+}
+
+.radio-cards1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.radio-cards1 label {
+  width: calc(25% - 10px);
+  margin: 5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.radio-cards1 label:hover {
+  cursor: pointer;
+  color: #e20001;
+}
+
+.radio-cards1-inner {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 0.9em;
+}
+
+.radio-cards1-input:checked + .radio-cards1-inner {
+  -webkit-box-shadow: 0 0 1px 1px #e20001;
+          box-shadow: 0 0 1px 1px #e20001;
+  color: #e20001;
+}
+
+.services-of-company textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 0;
+  resize: none;
+  border: 1px solid transparent;
+  background-color: #eeeeee;
+  outline: none;
+}
+
+.services-of-company textarea:focus {
+  color: #333;
+  background: #f9f9f9;
+  outline: none;
+  background-color: #f9f9f9;
+  border: 1px solid #333;
+}
+
+.service-type label {
+  width: calc(33.333% - 10px);
+}
+
+#imgshow {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-right: 15px;
+}
+
+.logo-upload label {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.logo-upload label:hover {
+  color: #fff;
+  background-color: #e20001;
+}
+
+.captcha-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.captcha #refresh {
+  width: 30px;
+  height: 30px;
+  background: url(../image/icons/refresh-cw.png) center center no-repeat;
+  border: none;
+  outline: none;
+}
+
+.captcha #txtInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 0;
+  border: none;
+  background-color: #eeeeee;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.captcha #txtInput:focus {
+  color: #333;
+  background: #f9f9f9;
+  outline: none;
+  background-color: #f9f9f9;
+  border: 1px solid #333;
+}
+
 @media only screen and (min-width: 1025px) {
   .my-carousel {
     height: 70vh;
+  }
+  .be-partner form .row {
+    margin: 0 -30px;
   }
 }
 
@@ -1302,6 +1505,12 @@ h4.section-title::before {
   }
   .navbar .row {
     margin: 0;
+  }
+  .be-partner .row {
+    margin: 0;
+  }
+  .be-partner form .row {
+    margin: 0 -15px;
   }
   .city-list {
     top: 0;
@@ -1398,6 +1607,12 @@ h4.section-title::before {
   }
   #listOfPartners ul li {
     width: calc(50% - 8px);
+  }
+  .radio-cards1 label {
+    width: calc(50% - 10px);
+  }
+  .be-partner .subtitle {
+    font-size: .9em;
   }
 }
 
@@ -1551,11 +1766,29 @@ h4.section-title::before {
   .partners-list .category-list, .branch-item .category-list {
     display: none;
   }
+  .be-partner .subtitle {
+    margin-top: 15px;
+  }
+  .input-group label {
+    font-size: .85em;
+  }
+  .input-group input:focus + label,
+  .input-group input:valid + label {
+    font-size: 13px;
+  }
 }
 
 @media only screen and (max-width: 350px) {
   .category-list li a {
     font-size: .5em;
+  }
+  .input-group label {
+    font-size: .75em;
+  }
+  .input-group input:focus + label,
+  .input-group input:valid + label {
+    font-size: 11px;
+    top: -8px;
   }
 }
 
