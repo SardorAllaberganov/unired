@@ -1184,4 +1184,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 }
 
+.desktop-category-menu{
+    display: none!important;
+}
+
 @import "media.scss";

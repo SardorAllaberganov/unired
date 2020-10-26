@@ -1490,6 +1490,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 1px solid #333;
 }
 
+.desktop-category-menu {
+  display: none !important;
+}
+
 @media only screen and (min-width: 1025px) {
   .my-carousel {
     height: 70vh;
@@ -1784,6 +1788,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .input-group input:focus + label,
   .input-group input:valid + label {
     font-size: 13px;
+  }
+  .desktop-category-menu {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .mobile-category-menu {
+    display: none;
   }
 }
 
