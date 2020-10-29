@@ -521,13 +521,13 @@ h4.section-title::before {
 .more-btn:disabled {
   background: #960001;
   color: #fbfbfb;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .more-btn:disabled:hover {
   background: #960001;
   color: #fbfbfb;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .scroll-wrapper {
@@ -1488,6 +1488,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   outline: none;
   background-color: #f9f9f9;
   border: 1px solid #333;
+}
+
+#mainCaptcha {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
 }
 
 .desktop-category-menu {

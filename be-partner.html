@@ -419,7 +419,7 @@
                     <h6 class="subtitle mt-sm-3 mt-md-0">Captcha</h6>
                     <div class="captcha">
                         <div class="captcha-text">
-                            <h3 type="text" id="mainCaptcha"></h3>
+                            <h3 type="text" id="mainCaptcha" onselectstart="return false"></h3>
                             <p><input type="button" id="refresh" onclick="Captcha();" /></p> 
                         </div>
                         <input type="text" id="txtInput" onkeyup="console.log(ValidCaptcha())"/>
@@ -428,7 +428,7 @@
             </div>
             <div class="row mt-5 justify-content-center">
                 <div class="col-12 text-center">
-                    <button disabled='true' id="partnerSubmit" type="submit" class="more-btn">Отправить</button>
+                    <input disabled='true' id="partnerSubmit" type="submit" class="more-btn" value="Отправить"/>
                 </div>
             </div>
         </form>

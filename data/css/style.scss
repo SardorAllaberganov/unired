@@ -391,15 +391,15 @@ h4.section-title {
         color: #e20001;
         background: none;
     }
-    &:disabled{
+    &:disabled {
         background: darken($color: #e20001, $amount: 15%);
         color: #fbfbfb;
-        opacity: .7;
+        opacity: 0.7;
     }
-    &:disabled:hover{
+    &:disabled:hover {
         background: darken($color: #e20001, $amount: 15%);
         color: #fbfbfb;
-        opacity: .7;
+        opacity: 0.7;
     }
 }
 .scroll-wrapper {
@@ -1148,7 +1148,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             background-color: #e20001;
         }
     }
-    span{
+    span {
         margin-left: 15px;
         color: #e20001;
     }
@@ -1159,7 +1159,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         display: flex;
         justify-content: space-between;
     }
-    #refresh{
+    #refresh {
         width: 30px;
         height: 30px;
         background: url(../image/icons/refresh-cw.png) center center no-repeat;
@@ -1174,7 +1174,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         background-color: #eeeeee;
         outline: none;
         border: 1px solid transparent;
-        &:focus{
+        &:focus {
             color: #333;
             background: #f9f9f9;
             outline: none;
@@ -1184,8 +1184,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 }
 
-.desktop-category-menu{
-    display: none!important;
+#mainCaptcha {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+}
+
+.desktop-category-menu {
+    display: none !important;
 }
 
 @import "media.scss";
