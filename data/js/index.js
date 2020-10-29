@@ -97,7 +97,6 @@ $(document).ready(function () {
     
     $('#search').keyup(function() {
         var searchField = $('#search').val();
-        console.log(searchField)
         if(searchField !== ""){
             var myExp = new RegExp(searchField, "i");
             $.getJSON('https://unired.uz/mobile/get_partners', function(data) {

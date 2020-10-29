@@ -1322,6 +1322,22 @@ h4.section-title::before {
   -moz-appearance: textfield;
 }
 
+.input-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.input-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.input-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.input-group input::placeholder {
+  color: transparent;
+}
+
 .input-group label {
   color: #999;
   font-weight: normal;
@@ -1341,7 +1357,7 @@ h4.section-title::before {
 }
 
 .input-group input:focus + label,
-.input-group input:valid + label {
+.input-group input:not(:placeholder-shown) + label {
   top: -10px;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -1352,15 +1368,34 @@ h4.section-title::before {
 }
 
 .input-group input:focus + label span,
-.input-group input:valid + label span {
+.input-group input:not(:placeholder-shown) + label span {
   color: #e20001;
 }
 
 .input-group input:focus,
-.input-group input:valid {
+.input-group input:not(:placeholder-shown) {
   outline: none;
   background-color: #f9f9f9;
   border: 1px solid #333;
+}
+
+.input-group input:focus:valid:not(:placeholder-shown), .input-group input:not(:placeholder-shown):valid:not(:placeholder-shown) {
+  border-color: rgba(46, 213, 115, 0.6);
+}
+
+.input-group input:focus:invalid, .input-group input:not(:placeholder-shown):invalid {
+  border-color: rgba(255, 71, 87, 0.6);
+}
+
+.input-group input:focus:invalid + label::after, .input-group input:not(:placeholder-shown):invalid + label::after {
+  content: "Please fill out this form";
+  color: #e20001;
+  position: fixed;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  top: 60px;
+  left: 0;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -1488,17 +1523,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   outline: none;
   background-color: #f9f9f9;
   border: 1px solid #333;
-}
-
-#mainCaptcha {
-  -webkit-user-select: none;
-  /* Chrome all / Safari all */
-  -moz-user-select: none;
-  /* Firefox all */
-  -ms-user-select: none;
-  /* IE 10+ */
-  user-select: none;
-  /* Likely future */
 }
 
 .desktop-category-menu {

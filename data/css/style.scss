@@ -1032,6 +1032,9 @@ h4.section-title {
         &[type="number"] {
             -moz-appearance: textfield;
         }
+        &::placeholder {
+            color: transparent;
+        }
     }
 
     label {
@@ -1051,7 +1054,7 @@ h4.section-title {
     }
 
     input:focus + label,
-    input:valid + label {
+    input:not(:placeholder-shown) + label {
         top: -10px;
         transform: translateY(0);
         font-size: 14px;
@@ -1063,10 +1066,32 @@ h4.section-title {
         }
     }
     input:focus,
-    input:valid {
+    input:not(:placeholder-shown) {
         outline: none;
         background-color: #f9f9f9;
         border: 1px solid #333;
+    }
+
+    input:focus, input:not(:placeholder-shown) {
+        &:valid {
+            &:not(:placeholder-shown) {
+                border-color: rgba(#2ed573, 0.6);
+            }
+        }
+
+        &:invalid {
+            border-color: rgba(#ff4757, 0.6);
+        }
+    }
+    input:focus:invalid + label, input:not(:placeholder-shown):invalid + label{
+        &::after{
+            content: "Please fill out this form";
+            color: #e20001;
+            position: fixed;
+            width: max-content;
+            top: 60px;
+            left: 0;
+        }
     }
 }
 
@@ -1184,12 +1209,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 }
 
-#mainCaptcha {
-    -webkit-user-select: none; /* Chrome all / Safari all */
-    -moz-user-select: none; /* Firefox all */
-    -ms-user-select: none; /* IE 10+ */
-    user-select: none; /* Likely future */
-}
+// #mainCaptcha{
+//     -webkit-user-select: none;  /* Chrome all / Safari all */
+//   -moz-user-select: none;     /* Firefox all */
+//   -ms-user-select: none;      /* IE 10+ */
+//   user-select: none;          /* Likely future */
+// }
 
 .desktop-category-menu {
     display: none !important;

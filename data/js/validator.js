@@ -77,27 +77,25 @@ $(document).ready(function () {
             }
         });
 
-        $("#email").on("keydown", function () {
-            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{1,4})?$/;
-            console.log(emailReg.test($(this).val()))
-            if(!emailReg.test($(this).val()) && $(this).val() !== ''){
-                $("#email").css("border-color", "#e20001")
-            }
-            else{
-                $("#email").css("border-color", "#333")
-            }
-        });
+    $("#email").on("keydown", function () {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{1,4})?$/;
+        if (!emailReg.test($(this).val()) && $(this).val() !== "") {
+            $("#email").css("border-color", "#e20001");
+        } else {
+            $("#email").css("border-color", "#333");
+        }
+    });
 
-        $("#email").focusin(function () {
-            if ($("#email").val() === '') {
-                $("#email").css("border", "1px solid #333")
-            }
-        });
-        
-        $("#email").focusout(function () {
-            if ($("#email").val() === '') {
-                $("#email").css("border", "1px solid transparent")
-            }
-        });
+    $("#email").focusin(function () {
+        if ($("#email").val() === "") {
+            $("#email").css("border", "1px solid #333");
+        }
+    });
+
+    $("#email").focusout(function () {
+        if ($("#email").val() === "") {
+            $("#email").css("border", "1px solid transparent");
+        }
+    });
 
 });
