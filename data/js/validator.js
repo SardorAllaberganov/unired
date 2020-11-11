@@ -23,7 +23,7 @@ $(document).ready(function () {
             $phone = $(this);
 
             // Don't let them remove the starting '('
-            if ($phone.val().length === 1 && (key === 8 || key === 46)) {
+            if ($phone.val().length === 1 && (key === 8 || key === 46 || key === 13)) {
                 $phone.val("(");
                 return false;
             }
@@ -33,7 +33,7 @@ $(document).ready(function () {
             }
 
             // Auto-format- do not expose the mask as the user begins to type
-            if (key !== 8 && key !== 9) {
+            if (key !== 8 && key !== 9 && key !== 13) {
                 if ($phone.val().length === 3) {
                     $phone.val($phone.val() + ")");
                 }
@@ -52,6 +52,7 @@ $(document).ready(function () {
             return (
                 key == 8 ||
                 key == 9 ||
+                key == 13 ||
                 key == 46 ||
                 (key >= 48 && key <= 57) ||
                 (key >= 96 && key <= 105)
