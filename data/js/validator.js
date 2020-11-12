@@ -7,13 +7,30 @@ $(document).ready(function () {
         if (this.value.length == 6) return false;
     });
 
-    $("#dateOfCreate").focusin(function () {
-        $(this).attr("type", "date");
-    });
-    $("#dateOfCreate").focusout(function () {
-        if ($(this).val() != 0) {
-        } else {
-            $(this).attr("type", "text");
+    // $("#dateOfCreate").focusin(function () {
+    //     $(this).attr("type", "date");
+    // });
+    // $("#dateOfCreate").focusout(function () {
+    //     if ($(this).val() != 0) {
+    //     } else {
+    //         $(this).attr("type", "text");
+    //     }
+    // });
+
+    $("#dateOfCreate").keydown(function (e) {
+        var key = e.which || e.charCode || e.keyCode || 0;
+        var value = $(this).val();
+        if (key !== 8 && key !== 9) {
+            if (key < 48 || key > 57) {
+                e.preventDefault();
+            } else {
+                if($(this).val().length === 2){
+                    $(this).val($(this).val() + ".")
+                }
+                if($(this).val().length === 5){
+                    $(this).val($(this).val() + ".")
+                }
+            }
         }
     });
 
