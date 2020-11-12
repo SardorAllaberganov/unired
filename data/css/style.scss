@@ -1265,7 +1265,7 @@ h4.section-title {
 				+ {
 					label {
 						&::after {
-							content: "Please fill out this form";
+							// content: "Please fill out this form";
 							color: #e20001;
 							position: fixed;
 							width: -webkit-max-content;
@@ -1488,6 +1488,9 @@ input[type="date"] {
 	}
 }
 @media only screen and (max-width: 992px) {
+	#searchResults{
+		position: relative;
+	}
 	.menu {
 		display: none;
 	}
@@ -1607,6 +1610,7 @@ input[type="date"] {
 		}
 	}
 	.category-list {
+		display: none;
 		li {
 			img {
 				margin-right: 10px;
@@ -1620,7 +1624,7 @@ input[type="date"] {
 		width: 30%;
 	}
 	.partners-main {
-		width: calc(70% - 25px);
+		width: 100%;
 		margin-left: 25px;
 	}
 	#listOfPartners {

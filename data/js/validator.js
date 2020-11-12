@@ -1,6 +1,14 @@
 $(document).ready(function () {
-    $("#innNumber").on("keypress", function () {
-        if (this.value.length == 9) return false;
+    $("#innNumber").on("keydown", function (e) {
+        // if (this.value.length == 9) return false;
+
+        var key = e.which || e.charCode || e.keyCode || 0;
+        var value = $(this).val();
+        if (key !== 8 && key !== 9) {
+            if (key < 48 || key > 57) {
+                e.preventDefault();
+            }
+        }
     });
 
     $("#zipcode").on("keypress", function () {
