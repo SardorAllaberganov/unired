@@ -142,6 +142,9 @@ $(document).ready(function () {
     //     $('#listOfPartners').html(output);
     // });
 
+    
+    
+
 
     $(document).ready(function () {
         if($('#imgshow').attr('src', ' ')){

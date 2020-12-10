@@ -1,10 +1,8 @@
-// function getCurrentCity() {
-//     return $.ajax({
-//         url: "https://geolocation-db.com/jsonp",
-//         jsonpCallback: "callback",
-//         dataType: "jsonp",
-//     });
-// }
+
+
+// navigator.geolocation.getCurrentPosition(function (data) {
+//     console.log([data.coords.latitude, data.coords.longitude]);
+// });
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -12,11 +10,25 @@ if (navigator.geolocation) {
     x.innerHTML = "Geolocation is not supported by this browser.";
 }
 var x;
+
+// function getCurrentCity() {
+//     return $.ajax({
+//         url: "https://geolocation-db.com/json",
+//         dataType: "json",
+//     });
+// }
+
+
+// $.when(getCurrentCity()).done(function (response, status, jqXHR) {
+//     console.log(response.latitude)
+// });
+
 function showPosition(position) {
     x = [position.coords.longitude, position.coords.latitude];
-    console.log(x)
+    console.log(x);
 
-    mapboxgl.accessToken = "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
+    mapboxgl.accessToken =
+        "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
     // $.when(getCurrentCity()).done(function (response) {
     var curLocation = x;
     var map = new mapboxgl.Map({
@@ -103,7 +115,7 @@ function showPosition(position) {
                     },
                 });
                 // map.scrollZoom.disable();
-                });
             });
+        });
     });
 }
